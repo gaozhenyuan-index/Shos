@@ -1,0 +1,252 @@
+#bc {
+  width: 100%;
+  background: #f9f9f9;
+  border-top: 1px solid #eee;
+}
+
+#bc #top {
+  font: 12px/32px "";
+  color: #666;
+  margin: 0 auto;
+  width: 1210px;
+  height: 32px;
+}
+
+#bc #top .t-left {
+  float: left;
+}
+
+#bc #top .t-left span {
+  padding: 0 10px;
+}
+
+#bc #top .t-left a {
+  color: #E31939;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+#bc #top .t-right {
+  float: right;
+}
+
+#bc #top .t-right a {
+  padding: 0 5px;
+  color: #333;
+}
+
+#bc #top .t-right a.shop {
+  color: #E31939;
+}
+
+.header {
+  width: 100%;
+}
+
+.header .clear1 {
+  margin-top: 20px;
+}
+
+.header .w1210 {
+  width: 1220px;
+  margin: 0 auto;
+}
+
+.header .w1210 .mall-logo {
+  float: left;
+  width: 250px;
+  height: 70px;
+  position: relative;
+}
+
+.header .w1210 .mall-logo a {
+  position: relative;
+  display: block;
+  color: #fff;
+  text-indent: 0 !important;
+}
+
+.header .w1210 .mall-search {
+  margin-top: 10px;
+  float: left;
+  margin-left: 170px;
+}
+
+.header .w1210 .mall-search .mall-form {
+  overflow: hidden;
+}
+
+.header .w1210 .mall-search .mall-form .kuang {
+  float: left;
+  width: 459px;
+  height: 36px;
+  border: 2px solid #E31939;
+  font: 12px/44px "";
+  color: #eee;
+}
+
+.header .w1210 .mall-search .mall-form a {
+  width: 90px;
+  height: 40px;
+  background: #E31939;
+  float: left;
+  text-align: center;
+  font: 15px/44px "";
+  color: #fff;
+}
+
+.header .w1210 .mall-search .mall-bai {
+  padding-top: 6px;
+  overflow: hidden;
+}
+
+.header .w1210 .mall-search .mall-bai a {
+  font: 12px/22px "";
+  color: #999;
+  padding: 0 12px;
+}
+
+.header .w1210 .mall-search .mall-bai span {
+  color: #eee;
+}
+
+.header .w1210 .header-right {
+  float: left;
+  padding-left: 20px;
+}
+
+.header .w1210 .header-right a img {
+  width: 70px;
+  height: 83px;
+}
+
+.nav {
+  padding-top: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.nav .w1210 {
+  width: 1210px;
+  margin: 0 auto;
+}
+
+.nav .w1210 .classification {
+  float: left;
+  width: 210px;
+  height: 40px;
+  text-align: center;
+  background: #E31939;
+}
+
+.nav .w1210 .classification a {
+  font: 16px/40px "";
+  color: #fff;
+}
+
+.nav .w1210 .navall a {
+  color: #3C3C3C;
+  font: 16px/40px "";
+  padding: 0 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+* a {
+  text-decoration: none;
+}
+
+.details-show {
+  width: 100%;
+}
+
+.details-show .details-goods {
+  padding: 10px;
+  width: 1210px;
+  margin: 0 auto;
+}
+
+.details-show .details-goods .details-left {
+  float: left;
+}
+
+.details-show .details-goods .details-left img {
+  width: 400px;
+  height: 400px;
+}
+
+.details-show .details-goods .details-right {
+  margin-left: 15px;
+  float: left;
+}
+
+.details-show .details-goods .details-right h3 {
+  display: inline-block;
+  font: 600 25px/80px "";
+  color: #3C3C3C;
+}
+
+.details-show .details-goods .details-right .details-right-div {
+  width: 530px;
+  height: 72px;
+  color: #666;
+  margin: 20px 0px;
+  padding: 6px 15px;
+  background: #999;
+  border-radius: 5px;
+}
+
+.details-show .details-goods .details-right .details-right-div span {
+  padding: 0 50px;
+  color: red;
+  font: 25px/70px "";
+}
+
+.details-show .details-goods .details-right a {
+  display: inline-block;
+  width: 72px;
+  height: 60px;
+  border: 1px solid #999;
+  text-align: center;
+  margin: 10px 10px 30px 10px;
+}
+
+.details-show .details-goods .details-right a img {
+  width: 50px;
+  height: 50px;
+  padding-top: 5px;
+}
+
+.details-show .details-goods .details-right p {
+  display: inline-block;
+  width: 162px;
+  height: 40px;
+  background: #E31939;
+  font: 16px/40px "";
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  margin: 25px 55px 0 10px;
+  cursor: pointer;
+}
+
+.details-show .details-goods .details-right span {
+  font-size: 20px;
+  color: #E31939;
+  cursor: pointer;
+  padding: 0px 10px;
+  margin-right: 30px;
+  border: 1px solid #999;
+  border-radius: 3px;
+}
+
+.details-jpg {
+  width: 1210px;
+  overflow: hidden;
+  margin: 0 auto;
+}

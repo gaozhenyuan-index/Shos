@@ -1,0 +1,729 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    a {
+        text-decoration: none;
+    }
+
+    list-style: none;
+}
+
+//登陆按钮效果
+input {
+    outline: none;
+}
+
+.login {
+    width: 120px;
+    height: 42px;
+    background: #f40;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    display: block;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+.popOutBg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, .6);
+    display: none;
+}
+
+.popOut {
+    position: fixed;
+    width: 600px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -300px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    display: none;
+}
+
+.popOut>span {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    height: 42px;
+    line-height: 42px;
+    color: #000;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.popOut table {
+    display: block;
+    margin: 42px auto 0;
+    width: 520px;
+}
+
+.popOut caption {
+    width: 520px;
+    text-align: center;
+    color: #f40;
+    font-size: 18px;
+    line-height: 42px;
+}
+
+.popOut table tr td {
+    color: #666;
+    padding: 6px;
+    font-size: 14px;
+}
+
+.popOut table tr td:first-child {
+    text-align: right;
+}
+
+.inp {
+    width: 280px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #999;
+    padding: 5px 10px;
+    color: #000;
+    font-size: 14px;
+    border-radius: 6px;
+}
+
+.inp:focus {
+    border-color: #f40;
+}
+
+@keyframes ani {
+    from {
+        transform: translateX(-100%) rotate(-60deg) scale(.5);
+    }
+
+    50% {
+        transform: translateX(0) rotate(0) scale(1);
+    }
+
+    90% {
+        transform: translateX(20px) rotate(0) scale(.8);
+    }
+
+    to {
+        transform: translateX(0) rotate(0) scale(1);
+    }
+}
+
+.ani {
+    animation: ani .5s ease-in-out;
+}
+
+
+
+//顶部top
+#bc {
+    width: 100%;
+    background: rgb(249, 249, 249);
+    border-top: 1px solid #eee;
+
+    #top {
+        font: 12px/32px "";
+        color: #666;
+        margin: 0 auto;
+        width: 1210px;
+        height: 32px;
+
+        .t-left {
+            float: left;
+
+            span {
+                padding: 0 10px;
+            }
+
+            a {
+                color: #E31939;
+                cursor: pointer;
+                padding: 0 5px;
+            }
+        }
+
+        .t-right {
+            a {
+            
+                padding: 0 5px;
+                color: #333;
+            }
+
+            a.shop {
+                color: #E31939;
+            }
+
+            float: right;
+        }
+    }
+}
+
+//头部
+.header {
+    width: 100%;
+
+    .clear1 {
+        margin-top: 20px;
+    }
+
+    .w1210 {
+
+        width: 1220px;
+        margin: 0 auto;
+
+        .mall-logo {
+            float: left;
+            width: 250px;
+            height: 70px;
+            position: relative;
+
+            a {
+                position: relative;
+                display: block;
+                color: #fff;
+                text-indent: 0 !important;
+            }
+        }
+
+        .mall-search {
+            margin-top: 10px;
+            float: left;
+            margin-left: 170px;
+
+            .mall-form {
+                overflow: hidden;
+
+                .kuang {
+                    float: left;
+                    width: 459px;
+                    height: 36px;
+                    border: 2px solid #E31939;
+                    font: 12px/44px "";
+                    color: #eee;
+
+                }
+
+                a {
+                    width: 90px;
+                    height: 40px;
+                    background: #E31939;
+                    float: left;
+                    text-align: center;
+                    font: 15px/44px "";
+                    color: #fff;
+                }
+            }
+
+            .mall-bai {
+                padding-top: 6px;
+                overflow: hidden;
+
+                a {
+                    font: 12px/22px "";
+                    color: #999;
+                    padding: 0 12px;
+                }
+
+                span {
+                    color: #eee;
+                }
+            }
+        }
+
+        .header-right {
+            float: left;
+            padding-left: 20px;
+
+            a {
+                img {
+                    width: 70px;
+                    height: 83px;
+                }
+            }
+        }
+    }
+}
+
+//导航栏
+.nav {
+   
+    padding-top: 10px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+
+    .w1210 {
+        width: 1210px;
+        margin: 0 auto;
+
+        .classification {
+            float: left;
+            width: 210px;
+            height: 40px;
+            text-align: center;
+            background: #E31939;
+
+            a {
+                font: 16px/40px "";
+                color: #fff;
+
+            }
+        }
+
+        .navall {
+            a {
+                color: #3C3C3C;
+                font: 16px/40px "";
+                padding: 0 20px;
+            }
+        }
+    }
+}
+
+// 大框banner
+.banner {
+    width: 100%;
+
+    .w1210 {
+        width: 1210px;
+        margin: 0 auto;
+
+        .banner-left {
+            float: left;
+
+            .banner-left-ul {
+                width: 210px;
+                height: 514px;
+                background: pink;
+
+                .banner-left-ul-li {
+
+                    &:hover {
+                        color: #eee;
+                        cursor: pointer;
+
+                        .bao {
+                            a {
+                                color: #eee;
+                            }
+                        }
+
+                        background:#E31939;
+
+                        .bao {
+                            .bao-hover {
+
+                                display: block;
+                            }
+                        }
+                    }
+
+                    border-radius: 3px;
+                    position: relative;
+                    height: 64px;
+                    text-align: center;
+                    color: #3C3C3C;
+
+                    .bao {
+                        padding-top: 8px;
+
+                        a {
+                            color: black;
+                            font: 600 15px/18px "";
+
+                        }
+
+                        span {
+                            font-size: 12px;
+                        }
+
+                        .bao-hover {
+                            z-index: 10;
+                            display: none;
+                            top: 0;
+                            left: 210px;
+                            width: 700px;
+                            height: 64px;
+                            background: white;
+                            position: absolute;
+                            border: 1px solid red;
+                            border-radius: 5px;
+
+                            .bao-hover1 {
+                                .te {
+                                    z-index: 12;
+                                    color: #666;
+                                    font: 600 12px/30px "";
+                                    padding: 0 20px;
+                                }
+                            }
+
+                            .bao-hover2 {
+                                a {
+                                    color: #666;
+                                    font: 600 12px/30px "";
+                                    padding: 0 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .banner-center {
+            float: left;
+            position: relative;
+            width: 745px;
+            height: 514px;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            .left {
+                position: absolute;
+                z-index: 11;
+                top: 250PX;
+                left: 0;
+                width: 50px;
+                height: 50px;
+                border: none;
+                background: #ccc;
+                border-radius: 5px;
+            }
+
+            .right {
+                position: absolute;
+                z-index: 11;
+                left: 695px;
+                top: 250px;
+                width: 50px;
+                height: 50px;
+                border: none;
+                border-radius: 5px;
+                background: #ccc;
+            }
+
+            img {
+                width: 745px;
+                height: 514px;
+                position: absolute;
+            }
+        }
+
+        .banner-right {
+            &:hover {
+                cursor: pointer;
+            }
+
+            float: right;
+            width: 254px;
+            height: 514px;
+            background: rgb(235, 235, 235);
+
+            .banner-right-top {
+
+                a {
+                    font-size: 12px;
+                    line-height: 18px;
+                    color: #999;
+                    width: 160px;
+                    display: inline-block;
+                    padding-left: 40px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+
+                img {
+                    width: 150px;
+                    height: 150px;
+                    padding-left: 40px;
+                }
+
+                h3 {
+                    font: 16px/60px "";
+                    color: #333;
+                    padding-left: 40px;
+                }
+
+                span {
+                    font: 600 14px/14px "";
+                    color: red;
+                    padding-left: 50px;
+                }
+            }
+
+            .banner-right-bottom {
+                background: #fff;
+
+                a {
+                    display: inline-block;
+                    color: #333333;
+                    font: 14px/36px "";
+                    width: 124px;
+                    height: 36px;
+                    background: #fff;
+                    text-align: center;
+
+                    &:hover {
+                        background: #fff;
+                    }
+
+                    a.aai {
+                        background: #fff;
+                    }
+                }
+
+                .brb-2 {
+
+                    color: #666;
+                    font: 13px/32px "";
+                    text-align: center;
+
+                    p {
+                        &:hover {
+                            color: #E31939;
+                            cursor: pointer;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+//产品展示一块 数据渲染上去
+.index-sale {
+    width: 100%;
+    padding-top: 20px;
+
+    .shabi {
+        width: 1210px;
+        margin: 0 auto;
+
+        .one-floor {
+            width: 1210px;
+            height: 540px;
+
+            .one-floor-top {
+                border-bottom: 1px solid red;
+
+
+                h1 {
+                    display: inline-block;
+                    color: #666;
+                    font: 18px/20px;
+                    padding-bottom: 5px;
+                    margin-right: 865px;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+                span {
+                    display: inline-block;
+                    width: 100px;
+                    height: 35.6px;
+                    text-align: center;
+                    border: 1px solid #999;
+                    border-bottom: none;
+                    font: 12px/35px "";
+
+                    &:hover {
+                        border-left: 1px solid red;
+                        border-top: 1px solid red;
+                        border-right: 1px solid red;
+                        cursor: pointer;
+
+                    }
+                }
+            }
+
+            .one-floor-bottom {
+                position: relative;
+                .one-floor-bottom-left {
+                    float: left;
+                    position: relative;
+                    width: 270px;
+                    height: 475px;
+
+                    img {
+                        width: 270px;
+                        height: 475px;
+                        position: absolute;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .one-floor-bottom-right {
+                    float: left;
+                    position: absolute;
+                    left: 270px;
+                    top: 0;
+                    &.agin{
+                        display: none;
+                    }
+                    ul {
+                        display: flex;
+                        width: 1210-270px;
+                        flex-wrap: wrap;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+
+                        li {
+                            border: 1px solid #eee;
+                            padding: 0 18px;
+
+                            img {
+                                width: 140px;
+                                height: 140px;
+                                margin: 0px 27.5px 10px;
+                                margin-top: 10px;
+                            }
+
+                            p {
+                                font: 12px/12px "";
+                                color: #777;
+                                width: 184px;
+                                text-align: center;
+                            }
+
+                            a {
+                                .gouwuche {
+                                    width: 32px;
+                                    height: 32px;
+                                    margin: 0;
+                                    padding-top: 5px;
+                                }
+                            }
+
+                            span {
+                                font-size: 18px;
+                                color: #E31939;
+                                padding-right: 100px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//楼层效果
+.nav2{
+    width: 50px;
+    height: 180px;
+    position: fixed;
+    right: 20px;
+    bottom: 40px;
+    background: #E31939;
+    border-radius: 5px;
+    li{
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 20px;
+        color: #fff;
+        cursor: pointer;
+        // border-top: 1px solid #b6b6b6;
+        
+    }
+    .top0{
+        font-size: 20px;
+        text-align: center;
+        color: #fff;
+        cursor: pointer;
+    }
+}
+
+// 隔层
+
+
+
+//底部
+.clear {
+    height: 528px;
+}
+
+.footer {
+    width: 100%;
+    background: #666;
+
+    .footer-clear {
+        width: 1210px;
+        margin: 0 auto;
+
+        .footer-top {
+            height: 140px;
+            background: #666;
+            overflow: hidden;
+
+            dl {
+                float: left;
+                width: 180px;
+                padding-left: 20px;
+
+                dt {
+                    color: #ccc;
+                    font: 16px/40px "";
+                }
+
+                dd {
+                    color: #ccc;
+                    font: 12px/24px "";
+
+                    &:hover {
+                        color: #E31939;
+                        cursor: pointer;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.footer-last {
+    background: rgb(37, 37, 37);
+    height: 218px;
+
+    .last-center {
+        text-align: center;
+        width: 1210px;
+        margin: 0 auto;
+        padding-top: 20px;
+
+        p {
+            text-align: center;
+            color: #ccc;
+
+            a {
+                color: #ccc;
+                font: 14px/30px "";
+
+                &:hover {
+                    color: #E31939;
+                }
+
+            }
+        }
+    }
+}
