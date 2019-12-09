@@ -178,6 +178,7 @@
 .details-show .details-goods .details-left img {
   width: 400px;
   height: 400px;
+  border-radius: 5px;
 }
 
 .details-show .details-goods .details-right {
@@ -207,19 +208,26 @@
   font: 25px/70px "";
 }
 
-.details-show .details-goods .details-right a {
-  display: inline-block;
-  width: 72px;
-  height: 60px;
+.details-show .details-goods .details-right .jia {
+  width: 20px;
+  height: 17px;
   border: 1px solid #999;
-  text-align: center;
-  margin: 10px 10px 30px 10px;
+  border-radius: 3px;
 }
 
-.details-show .details-goods .details-right a img {
-  width: 50px;
-  height: 50px;
-  padding-top: 5px;
+.details-show .details-goods .details-right .jian {
+  width: 20px;
+  height: 17px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+.details-show .details-goods .details-right .number {
+  text-align: center;
+  width: 30px;
+  height: 17px;
+  border: 1px solid #999;
 }
 
 .details-show .details-goods .details-right p {
@@ -249,4 +257,71 @@
   width: 1210px;
   overflow: hidden;
   margin: 0 auto;
+}
+
+.clear {
+  height: 528px;
+}
+
+.footer {
+  width: 100%;
+  background: #666;
+}
+
+.footer .footer-clear {
+  width: 1210px;
+  margin: 0 auto;
+}
+
+.footer .footer-clear .footer-top {
+  height: 140px;
+  background: #666;
+  overflow: hidden;
+}
+
+.footer .footer-clear .footer-top dl {
+  float: left;
+  width: 180px;
+  padding-left: 20px;
+}
+
+.footer .footer-clear .footer-top dl dt {
+  color: #ccc;
+  font: 16px/40px "";
+}
+
+.footer .footer-clear .footer-top dl dd {
+  color: #ccc;
+  font: 12px/24px "";
+}
+
+.footer .footer-clear .footer-top dl dd:hover {
+  color: #E31939;
+  cursor: pointer;
+}
+
+.footer-last {
+  background: #252525;
+  height: 218px;
+}
+
+.footer-last .last-center {
+  text-align: center;
+  width: 1210px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.footer-last .last-center p {
+  text-align: center;
+  color: #ccc;
+}
+
+.footer-last .last-center p a {
+  color: #ccc;
+  font: 14px/30px "";
+}
+
+.footer-last .last-center p a:hover {
+  color: #E31939;
 }

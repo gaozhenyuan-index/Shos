@@ -14,7 +14,7 @@
         <div class="t-left">
             <span>欢迎光临鞋都网!</span>
             <a id="login">登陆</a>
-            <a href="">免费注册</a>
+            <a id='register'>免费注册</a>
         </div>
         <div class="t-right">
             <a href="">我的信息</a>
@@ -304,6 +304,7 @@
                     <a href="./next.html"><img src="./imgs/floor-left1.jpg"></a>
                     <a href="./next.html"><img src="./imgs/floor2.jpg"></a>
                     <a href="./next.html"><img src="./imgs/floor3.jpg"></a>
+                    
                 </div>
                 <div class="one-floor-bottom-right floortwo">
                     <ul>
@@ -497,6 +498,10 @@
             <td>密码：</td>
             <td><input type="password" class="inp" placeholder="请输入密码" /></td>
         </tr>
+        <tr style="display: none;" class="regShow">
+            <td>确认密码：</td>
+            <td><input type="password" class="inp" placeholder="确认密码" /></td>
+        </tr>
         <tr>
             <td colspan="2"><input type="button" class="login" value="登录" /></td>
             
@@ -551,13 +556,17 @@ function _sel(param){
 				return document.querySelector(param);
 			}
 		}
+
 		function ani(){
 			_sel(".popOut").className = "popOut ani";
 		}
+
 		_sel("#login").onclick = function(){
 			_sel(".popOut").style.display = "block";
 			ani();
 			_sel(".popOutBg").style.display = "block";
+            $('.regShow').css({display:'none'});
+            $('.login').val('登陆')
 		};
 		_sel(".popOut > span").onclick = function(){
 			_sel(".popOut").style.display = "none";
@@ -567,6 +576,24 @@ function _sel(param){
 			_sel(".popOut").style.display = "none";
 			_sel(".popOutBg").style.display = "none";
 		};
+
+        //注册
+        $('#register').on('click',function(){
+            _sel(".popOut").style.display = "block";
+			ani();
+			_sel(".popOutBg").style.display = "block";
+            $('.regShow').css({display:'block'});
+            $('.login').val('注册')
+        })
+        _sel(".popOut > span").onclick = function(){
+			_sel(".popOut").style.display = "none";
+			_sel(".popOutBg").style.display = "none";
+		};
+		_sel(".popOutBg").onclick = function(){
+			_sel(".popOut").style.display = "none";
+			_sel(".popOutBg").style.display = "none";
+		};
+
 
 //一楼数据渲染
         $.ajax({
@@ -621,7 +648,7 @@ function _sel(param){
             $(".floortwo").css("display","block")
             $(".agin").css("display","none")
             $(".liangxie").css({
-                
+
                 color:"black"
             })
              $(".jingxin").css({
@@ -667,5 +694,9 @@ function _sel(param){
                 scrollTop:0
             })
         })
+
+
+		
+	
 </script>
 </html>

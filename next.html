@@ -217,11 +217,13 @@ $.ajax({
             for(var i=0;i<res.length;i++){
                 str += `
                 <li class="good-li1">
-                <img src="${res[i].img}">
-                <span class="good-span">￥${res[i].price}</span><span class="good-span2">已售0件</span>
-                <p>${res[i].name}</p>
-                <a href="" class="good-a1">加入收藏</a>
-                <a href=""><img src="./imgs/gouwuche.png" alt=""></a>
+                    <a href="/1911/shoes/details.html?goodsId=${res[i].goodsId}">
+                        <img src="${res[i].img}">
+                        <span class="good-span">￥${res[i].price}</span><span class="good-span2">已售0件</span>
+                        <p>${res[i].name}</p>000
+                        <p  class="good-a1">加入收藏</p>
+                        <p ><img src="./imgs/gouwuche.png" alt=""></p>
+                    </a>
                 </li>
                  `;
             }

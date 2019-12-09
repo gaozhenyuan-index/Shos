@@ -189,6 +189,11 @@
   margin: 5px;
 }
 
+.shop-show .goods-show ul .good-li1 > a {
+  display: block;
+  height: 100%;
+}
+
 .shop-show .goods-show ul .good-li1 img {
   padding-left: 4px;
   width: 220px;
@@ -220,7 +225,7 @@
   font-size: 12px;
 }
 
-.shop-show .goods-show ul .good-li1 a img {
+.shop-show .goods-show ul .good-li1 p img {
   width: 30px;
   height: 30px;
 }
