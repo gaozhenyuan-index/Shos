@@ -19,7 +19,7 @@
         <div class="t-right">
             <a href="">我的信息</a>
             <a href="" class="shop">我关注的店铺</a>
-            <a href="" class="shop">购物车</a>
+            <a href="./car.html" class="shop">购物车</a>
             <a href="">收藏夹</a>
             <a href="">手机版</a>
         </div>
@@ -29,7 +29,7 @@
         <div class="w1210">
            
             <div class="mall-logo">
-                <a href="#">
+                <a href="./first.html">
                     <img src="./imgs/logo.png">
                 </a>
             </div>
@@ -493,15 +493,15 @@
         <caption>欢迎登录本网站</caption>
         <tr>
             <td class="one">用户名：</td>
-            <td><input type="text" class="inp" placeholder="请输入用户名" /></td>
+            <td><input type="text" class="inp user" placeholder="请输入用户名" /></td>
         </tr>
         <tr>
             <td class="one">密码：</td>
-            <td><input type="password" class="inp" placeholder="请输入密码" /></td>
+            <td><input type="password" class="inp pass pass3" placeholder="请输入密码" /></td>
         </tr>
         <tr>
             <td class="one">确认密码</td>
-            <td><input type="password" class="inp" placeholder="确认密码" /></td>
+            <td><input type="password" class="inp pass2 pass4" placeholder="确认密码" /></td>
         </tr>
         <tr>
             <td colspan="2"><input type="button" class="login" value="登录" /></td>
@@ -512,6 +512,7 @@
 </body>
 <script src="./js/jq.js"></script>
 <script src="./js/jquery.banner.2.js"></script>
+<script src="./js/coolie.js"></script>
 <script>
 
 //bannner 轮播效果
@@ -562,13 +563,13 @@ function _sel(param){
 			_sel(".popOut").className = "popOut ani";
 		}
 
-		_sel("#login").onclick = function(){
+		$("#login").on("click",function(){
 			_sel(".popOut").style.display = "block";
 			ani();
 			_sel(".popOutBg").style.display = "block";
             $('.regShow').css({display:'none'});
             $('.login').val('登陆')
-		};
+		});
 		_sel(".popOut > span").onclick = function(){
 			_sel(".popOut").style.display = "none";
 			_sel(".popOutBg").style.display = "none";
@@ -706,7 +707,106 @@ let id = location.search.split('=')[1];
         })
 
 
-		
-	
+//登陆注册
+class Login{
+			constructor(){
+				this.user = document.querySelector(".inp");
+                this.pass = document.querySelector(".pass");
+                this.loginEnter = document.querySelector("#login");
+                this.registerEnter = document.querySelector("#register");
+                this.t = 1;
+				this.check = document.querySelector(".pass2");
+				this.login = document.querySelector(".login");
+				this.addEvent();
+				// this.display();
+			}
+			addEvent(){
+                var that = this;
+                this.loginEnter.onclick=function(){
+                    that.t = 1;
+                    that.check.parentNode.parentNode.style.display = "none";
+
+                }
+                this.registerEnter.onclick=function(){
+                    that.t = 2;
+                    that.check.parentNode.parentNode.style.display = "table-row";
+                    
+                }
+                this.login.onclick = function(){
+                    that.u = that.user.value;
+                    that.p = that.pass.value;
+                    that.usermsg = getCookie("userMsg") ? JSON.parse(getCookie("userMsg")) : [];
+                    console.log(that.usermsg)
+                    if(that.t == 1){
+                        that.loginEve();
+                    }else{
+                        that.registerEve();
+                    }
+                }
+            }
+            loginEve(){
+                this.success = false;
+                console.log(this.u);
+                console.log(this.p)
+                for(let i = 0; i < this.usermsg.length; i++){
+                    if(this.usermsg[i].user == this.u && this.usermsg[i].pass == this.p){
+                        alert("登陆成功");
+                        location.href = "";
+                        this.success = true;
+                        setCookie("nowUser", this.usermsg[i].user);
+                    }
+                }
+                if(!this.success){
+                    alert("登陆失败");
+                }
+            }
+            registerEve(){
+                this.isBeing = false;
+                if(this.check.value == this.p){
+                    for(let i = 0; i < this.usermsg.length; i++){
+                        if(this.u == this.usermsg[i].user){
+                            alert("用户名已存在");
+                            this.isBeing = true;
+                        }
+                    }
+                    if(!this.isBeing){
+                        let obj = {
+                            user:this.u,
+                            pass:this.p
+                        }
+                        this.usermsg.push(obj);
+                        setCookie("userMsg", JSON.stringify(this.usermsg),{
+                            expires:100
+                        });
+                        alert("注册成功");
+                    }
+                }else{
+                    alert("两次输入不一样");
+                }
+            }
+            
+		}
+        new Login;
+        class Welcome{
+            constructor(){
+                this.titleBox = document.querySelector(".t-left");
+                this.init();
+            }
+            init(){
+                this.nowUser = getCookie("nowUser");
+                if(this.nowUser){
+                    this.titleBox.innerHTML = `欢迎你，${this.nowUser}<a class = 'logout'>退出登录</a>`;
+                    this.logoutEve();
+                }
+            }
+            logoutEve(){
+                this.logout = document.querySelector(".logout");
+                this.logout.onclick = function(){
+                    setCookie("nowUser", "");
+                    location.href = "";
+                }
+            }
+        }
+        new Welcome;
 </script>
 </html>

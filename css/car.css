@@ -161,20 +161,36 @@
   padding: 0 20px;
 }
 
+.shop-car .kong {
+  font-size: 30px;
+}
+
+.shop-car .kong .kong1 {
+  width: 1210px;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 100px;
+}
+
 .shop-car .car {
   margin: 0 auto;
   width: 1210px;
+  padding: 10px;
+  border: 2px solid #E31939;
+  border-radius: 5px;
 }
 
 .shop-car .car table {
+  margin-left: 40px;
   width: 990px;
   height: 35px;
   font-size: 12px;
   color: #666666;
+  border-bottom: 1px solid #E31939;
 }
 
 .shop-car .car table tr td.td1 {
-  width: 80px;
+  width: 8%;
   height: 35px;
 }
 
@@ -184,32 +200,36 @@
 }
 
 .shop-car .car table tr .td2 {
-  width: 366px;
+  width: 37%;
 }
 
 .shop-car .car table tr .td3 {
-  width: 148px;
+  width: 15%;
 }
 
 .shop-car .car table tr .td4 {
-  width: 147px;
+  width: 15%;
 }
 
 .shop-car .car table tr .td5 {
-  width: 98px;
+  width: 10px;
 }
 
 .shop-car .car .show-table2 {
-  padding: 15px;
+  border: none;
 }
 
 .shop-car .car .show-table2 tr td {
   width: 50px;
 }
 
+.shop-car .car .show-table2 tr .mabi {
+  width: 5%;
+}
+
 .shop-car .car .show-table2 tr .show-td6 {
   overflow: hidden;
-  width: 200px;
+  width: 40%;
 }
 
 .shop-car .car .show-table2 tr .show-td6 img {
@@ -217,11 +237,11 @@
   height: 60px;
   display: block;
   float: left;
+  margin: 10px 10px 0 0;
 }
 
 .shop-car .car .show-table2 tr .show-td6 .show-div {
   float: left;
-  width: 330px;
 }
 
 .shop-car .car .show-table2 tr .show-td6 .show-div p {
@@ -231,7 +251,7 @@
 }
 
 .shop-car .car .show-table2 tr .show-td7 {
-  width: 147px;
+  width: 15%;
   height: 105px;
 }
 
@@ -244,6 +264,30 @@
 .shop-car .car .show-table2 tr .show-td7 .show-input2 {
   width: 20px;
   height: 20px;
+}
+
+.shop-car .car .show-table2 tr .jiage {
+  width: 15%;
+}
+
+.shop-car .car .show-table2 tr .shanchu {
+  width: 10px;
+  cursor: pointer;
+}
+
+.shop-car .car .show-table2 tr .money span {
+  display: inline-block;
+  border: 1px solid #E31939;
+  width: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font: 600 15px/30px "";
+  margin-left: 30px;
+  height: 30px;
+  background: #E31939;
+  color: #eee;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 .clear {
