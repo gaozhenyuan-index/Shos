@@ -32,6 +32,7 @@
 
 #bc #top .t-left a {
   color: #E31939;
+  cursor: pointer;
   padding: 0 5px;
 }
 
@@ -160,77 +161,93 @@
   padding: 0 20px;
 }
 
-.clear {
-  height: 528px;
-}
-
-.shop-show {
-  width: 100%;
-}
-
-.shop-show .goods-show {
-  width: 1210px;
+.shop-car .car {
   margin: 0 auto;
+  width: 1210px;
+}
+
+.shop-car .car table {
+  width: 990px;
+  height: 35px;
+  font-size: 12px;
   color: #666666;
 }
 
-.shop-show .goods-show ul {
-  display: flex;
-  width: 1210px;
-  flex-wrap: wrap;
+.shop-car .car table tr td.td1 {
+  width: 80px;
+  height: 35px;
 }
 
-.shop-show .goods-show ul .good-li1 {
-  cursor: pointer;
-  border: 1px solid #ccc;
-  width: 228px;
-  height: 353px;
-  border-radius: 3px;
-  margin: 5px;
+.shop-car .car table tr td.td1 input {
+  width: 12.44px;
+  height: 12.44px;
 }
 
-.shop-show .goods-show ul .good-li1 > a {
-  display: block;
-  height: 100%;
+.shop-car .car table tr .td2 {
+  width: 366px;
 }
 
-.shop-show .goods-show ul .good-li1 img {
-  padding-left: 4px;
-  width: 220px;
-  height: 220px;
+.shop-car .car table tr .td3 {
+  width: 148px;
 }
 
-.shop-show .goods-show ul .good-li1 p {
-  text-align: center;
-  width: 205px;
-  font-size: 12px;
-  padding: 5px 0;
+.shop-car .car table tr .td4 {
+  width: 147px;
 }
 
-.shop-show .goods-show ul .good-li1 .good-a1 {
-  font-size: 12px;
-  color: #E31939;
-  padding-right: 0px;
+.shop-car .car table tr .td5 {
+  width: 98px;
+}
+
+.shop-car .car .show-table2 {
+  padding: 15px;
+}
+
+.shop-car .car .show-table2 tr td {
   width: 50px;
-  display: inline-block;
 }
 
-.shop-show .goods-show ul .good-li1 .good-span {
-  padding-top: 15px;
-  padding-right: 100px;
-  font-size: 20px;
-  color: #E31939;
+.shop-car .car .show-table2 tr .show-td6 {
+  overflow: hidden;
+  width: 200px;
 }
 
-.shop-show .goods-show ul .good-li1 .good-span2 {
-  padding-top: 15px;
+.shop-car .car .show-table2 tr .show-td6 img {
+  width: 60px;
+  height: 60px;
+  display: block;
+  float: left;
+}
+
+.shop-car .car .show-table2 tr .show-td6 .show-div {
+  float: left;
+  width: 330px;
+}
+
+.shop-car .car .show-table2 tr .show-td6 .show-div p {
   font-size: 12px;
+  color: #666666;
+  width: 243px;
 }
 
-.shop-show .goods-show ul .good-li1 .imgss1 {
-  width: 30px;
-  height: 30px;
-  padding-left: 110px;
+.shop-car .car .show-table2 tr .show-td7 {
+  width: 147px;
+  height: 105px;
+}
+
+.shop-car .car .show-table2 tr .show-td7 span {
+  width: 21px;
+  height: 22px;
+  border: 1px solid #999;
+}
+
+.shop-car .car .show-table2 tr .show-td7 .show-input2 {
+  width: 20px;
+  height: 20px;
+}
+
+.clear {
+  height: 528px;
 }
 
 .footer {

@@ -38,10 +38,10 @@ input {
 
 .popOut {
     position: fixed;
-    width: 800px;
-    height: 500px;
-    top: 50%;
-    left: 50%;
+    width: 600px;
+    height: 400px;
+    top:40%;
+    left: 48%;
     margin-top: -150px;
     margin-left: -300px;
     background: #fff;
@@ -59,6 +59,7 @@ input {
     color: #000;
     font-size: 30px;
     cursor: pointer;
+
 }
 
 .popOut table {
@@ -76,24 +77,25 @@ input {
 }
 
 .popOut table tr td {
+    // width: 500px;
     color: #666;
-    padding: 6px;
+    padding: 6px 6px 6px 30px;
     font-size: 14px;
 }
-
 .popOut table tr td:first-child {
     text-align: right;
 }
 
 .inp {
-    width: 280px;
+    width: 180px;
     height: 20px;
     line-height: 30px;
     border: 1px solid #999;
-    padding: 5px 10px;
+    padding: 5px;
     color: #000;
     font-size: 14px;
     border-radius: 6px;
+   
 }
 
 .inp:focus {
@@ -121,7 +123,6 @@ input {
 .ani {
     animation: ani .5s ease-in-out;
 }
-
 
 
 //顶部top

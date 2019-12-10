@@ -308,6 +308,7 @@
                 </div>
                 <div class="one-floor-bottom-right floortwo">
                     <ul>
+                        
                         <!-- <li>
                             <img src="./imgs/tu1.jpg" alt="">
                             <p>2018夏新款水钻高跟坡跟拖凉鞋女松糕厚底拖鞋坡...</p>
@@ -491,15 +492,15 @@
     <table>
         <caption>欢迎登录本网站</caption>
         <tr>
-            <td width="120">用户名：</td>
+            <td class="one">用户名：</td>
             <td><input type="text" class="inp" placeholder="请输入用户名" /></td>
         </tr>
         <tr>
-            <td>密码：</td>
+            <td class="one">密码：</td>
             <td><input type="password" class="inp" placeholder="请输入密码" /></td>
         </tr>
-        <tr style="display: none;" class="regShow">
-            <td>确认密码：</td>
+        <tr>
+            <td class="one">确认密码</td>
             <td><input type="password" class="inp" placeholder="确认密码" /></td>
         </tr>
         <tr>
@@ -602,12 +603,14 @@ function _sel(param){
                 var str = ""
                 for(var i=0;i<res.length;i++){
                     str += `
+                    <a href="/1911/shoes/details.html?goodsId=${res[i].goodsId}">
                          <li>
                             <img src="${res[i].img}" alt="">
                             <p>${res[i].name}</p>
                             <span>￥${res[i].price}</span>
                             <a href="#"><img src="./imgs/gouwuche.png" alt="" class="gouwuche"></a>
                         </li>
+                     </a>   
                             `;
                 }
                 $(".one-floor-bottom-right").children("ul").html(str);
@@ -620,12 +623,14 @@ function _sel(param){
                 var str = ""
                 for(var i=0;i<res.length;i++){
                     str += `
+                    <a href="/1911/shoes/details.html?goodsId=${res[i].goodsId}">
                          <li>
                             <img src="${res[i].img}" alt="">
                             <p>${res[i].name}</p>
                             <span>￥${res[i].price}</span>
                             <a href="#"><img src="./imgs/gouwuche.png" alt="" class="gouwuche"></a>
                         </li>
+                    </a> 
                             `;
                 }
                 $(".agin").children("ul").html(str);
@@ -658,18 +663,23 @@ function _sel(param){
         
 
 //二楼数据渲染
+let id = location.search.split('=')[1];
+    console.log(id)
         $.ajax({
             url:"data/data2.json",
             success:function(res){
                 var str = ""
                 for(var i=0;i<res.length;i++){
+                    
                     str += `
+                    <a href="/1911/shoes/details.html?goodsId=${res[i].goodsId}">
                          <li>
                             <img src="${res[i].img}" alt="">
                             <p>${res[i].name}</p>
                             <span>￥${res[i].price}</span>
                             <a href="#"><img src="./imgs/gouwuche.png" alt="" class="gouwuche"></a>
                         </li>
+                    </a>    
                             `;
                 }
                 $(".two").children("ul").html(str);
