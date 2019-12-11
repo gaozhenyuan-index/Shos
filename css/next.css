@@ -205,6 +205,7 @@
   width: 205px;
   font-size: 12px;
   padding: 5px 0;
+  color: #ccc;
 }
 
 .shop-show .goods-show ul .good-li1 .good-a1 {
@@ -227,7 +228,7 @@
   font-size: 12px;
 }
 
-.shop-show .goods-show ul .good-li1 .imgss1 {
+.shop-show .goods-show ul .good-li1 a .imgss1 {
   width: 30px;
   height: 30px;
   padding-left: 110px;

@@ -84,7 +84,7 @@
                 <p>购物车空！！！</p>
             </div>
         </div>
-    <div class="car">
+    <!-- <div class="car">
         
         <table>
             <tbody>
@@ -130,7 +130,7 @@
             </tr>
         </tbody>
         </table>
-    </div>
+    </div> -->
 </div>
 
 <!--底部1-->
@@ -248,4 +248,85 @@
 </div>
 </body>
 </body>
+<script src="./js/jq.js"></script>
+<script src="./js/ajax.js"></script>
+<script src="./js/coolie.js"></script>
+<script>
+//购物车
+
+class Car{
+    constructor(){
+        this.url = "http://localhost/1911/shoes/data/data3.json";
+        this.tbody = document.querySelector(".car");
+        this.init();
+        this.load()
+    }
+    load(){
+        let this1 = this;
+        ajaxGet(this.url,(res)=>{
+            this1.res = JSON.parse(res);
+            
+            this1.getCookie()
+        })
+    }
+    getCookie(){
+        this.goods = getCookie("goodsDECookie") ? JSON.parse(getCookie("goodsDECookie")) : [];
+        
+        this.display();
+    }
+    display(){
+        var str = "";
+        for(var i=0;i<this.res.length;i++){
+            for(var j=0;j<this.goods.length;j++){
+                if(this.res[i].goodsId === this.goods[j].id){
+                    // str += `<tr index="${this.res[i].goodsId}">
+                    //             <td><img src="${this.res[i].img}"/></td>
+                    //             <td>${this.res[i].name}</td>
+                    //             <td>${this.res[i].price}</td>
+                    //             <td><input type="number" min=1 value="${this.goods[j].num}" /></td>
+                    //             <td class="delete">删除</td>
+                    //         </tr>`;
+                    str += `<tr index="${this.res[i].goodsId}">
+                                <td class="mabi">
+                                    <input type="checkbox" value="">
+                                </td>
+                                <td class="show-td6">
+                                    <img src="${res[i].img}"">
+                                    <div class="show-div">
+                                        <p>${this.res[i].name}</p><br>
+                                        <p class="show-p1">颜色:黑色</p>
+                                        <p class="show-p2">尺码:34</p>
+                                    </div>
+                                </td>
+                                <td class="show-td7">
+                                    <span>-</span>
+                                    <input type="number" name="" class="show-input2" value="${this.goods[j].num}">
+                                    <span>+</span>
+                                </td>
+                                <td class="jiage">
+                                    <span>${res[i].price}</span>
+                                </td>
+                                <td class="shanchu">
+                                    <span>删除</span>
+                                </td>
+                                <td class="money">
+                                    <span>去结算</span>
+                                </td>
+                            </tr>`;
+                }
+            }
+        }
+        // this.tbody.innerHTML = str;
+    }
+    init(){
+        let str =getCookie("numGoods");
+        if(!str){
+            
+        }
+        }
+}
+
+    new Car;
+        
+</script>
 </html>

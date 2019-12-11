@@ -161,6 +161,7 @@
                 height: 353px;
                 border-radius: 3px;
                 margin: 5px;
+               
                 & > a {
                     display: block;
                     height: 100%;
@@ -175,6 +176,7 @@
                     width: 205px;
                     font-size:12px ;
                     padding: 5px 0;
+                    color: #ccc;
                 }
                 .good-a1{
                     font-size: 12px;
@@ -193,12 +195,13 @@
                     padding-top: 15px;
                     font-size:12px ;
                 }
-                .imgss1{
+               a{
+                   .imgss1{
                     width: 30px;
                     height: 30px;
                     padding-left: 110px;
-                    
-                }
+                   }
+               }
             }
         }
     }

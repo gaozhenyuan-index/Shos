@@ -209,7 +209,10 @@
 </body>
 </html>
 <script src="../jq.js"></script>
+<script src="./js/ajax.js"></script>
+<script src="./js/coolie.js"></script>
 <script>
+//数据渲染
 $.ajax({
         url:"data/data3.json",
         success:function(res){
@@ -230,5 +233,59 @@ $.ajax({
             $(".goods-show").children("ul").html(str);
         }
     })
-
+// //加入购物车
+// class list{
+//     constructor(){
+//         this.url="http://localhost/1911/shoes/data/data3.json";
+//         this.cont = document.querySelector(".goods-show").querySelector("ul");
+//         this.load()
+//         this.addEvent();
+//     }
+//     load(){
+//         var that=this;
+//         ajaxGet(this.url,function(res){
+//             // console.log(res)
+//             that.res=JSON.parse(res)
+//             that.display();
+//         })
+//     }
+//     display(){
+//         var str="";
+//         for(var i=0;i<this.res.length;i++){
+//             str += `
+//                     <li class="good-li1" index="${this.res[i].goodsId}">
+//                         <img src="${this.res[i].img}" class="imgte">
+//                         <span class="good-span">￥${this.res[i].price}</span><span class="good-span2">已售0件</span>
+//                         <p>${this.res[i].name}</p>
+//                         <p href="" class="good-a1">加入收藏</p>
+//                         <a href=""><img src="./imgs/gouwuche.png" alt="" class="imggouwu"></a>
+//                     </li>
+//                     `;
+//         }
+//         this.cont.innerHTML=str;
+//         }
+//         addEvent(){
+//             var that=this;
+//             this.cont.addEventListener("click",function(eve){
+//                 var e=eve || window.event;
+//                 var target = e.target || e.srcElement;
+//                 if(target.className=="good-a1"){
+//                 that.id= target.parentNode.getAttribute("index");
+//                 that.setCookie();
+//                 }
+//             })
+           
+//         }
+//       setCookie(){
+//         this.goods =  getCookie("goodsdecookie") ? JSON.parse(getCookie("goodsdecookie")) : [];
+//             //   console.log(this.goods);
+//             if(this.goods.length<1){
+//                 this.goods.push({
+//                     id:this.id,
+//                     num:1
+//                 })
+//             }
+//         }
+// }
+// new list;
 </script>
