@@ -84,8 +84,8 @@
                 <p>购物车空！！！</p>
             </div>
         </div>
-    <!-- <div class="car">
-        
+    <div class="car">
+        <div class="ca">
         <table>
             <tbody>
             <tr>
@@ -130,7 +130,8 @@
             </tr>
         </tbody>
         </table>
-    </div> -->
+        </div>
+    </div>
 </div>
 
 <!--底部1-->
@@ -257,76 +258,108 @@
 class Car{
     constructor(){
         this.url = "http://localhost/1911/shoes/data/data3.json";
-        this.tbody = document.querySelector(".car");
-        this.init();
-        this.load()
+        this.car = $(".car")
+        this.kong = $(".kong");
+        this.load();
+        this.key = getQueryVariable("goodsId");
     }
     load(){
-        let this1 = this;
+        var this1 = this;
         ajaxGet(this.url,(res)=>{
             this1.res = JSON.parse(res);
-            
-            this1.getCookie()
+            // console.log(this1.res);
+            this1.getCookie(this1.res)
         })
     }
-    getCookie(){
-        this.goods = getCookie("goodsDECookie") ? JSON.parse(getCookie("goodsDECookie")) : [];
+    getCookie(res){
+        this.goods = getCookie("num") ? JSON.parse(getCookie("num")) : [];
         
-        this.display();
+        let res1 = this.res;
+        this.display(res1);  
     }
-    display(){
+    display(res){
+        var that = this;
+        this.res2 = res;
         var str = "";
-        for(var i=0;i<this.res.length;i++){
-            for(var j=0;j<this.goods.length;j++){
-                if(this.res[i].goodsId === this.goods[j].id){
-                    // str += `<tr index="${this.res[i].goodsId}">
-                    //             <td><img src="${this.res[i].img}"/></td>
-                    //             <td>${this.res[i].name}</td>
-                    //             <td>${this.res[i].price}</td>
-                    //             <td><input type="number" min=1 value="${this.goods[j].num}" /></td>
-                    //             <td class="delete">删除</td>
-                    //         </tr>`;
-                    str += `<tr index="${this.res[i].goodsId}">
-                                <td class="mabi">
-                                    <input type="checkbox" value="">
-                                </td>
-                                <td class="show-td6">
-                                    <img src="${res[i].img}"">
-                                    <div class="show-div">
-                                        <p>${this.res[i].name}</p><br>
-                                        <p class="show-p1">颜色:黑色</p>
-                                        <p class="show-p2">尺码:34</p>
-                                    </div>
-                                </td>
-                                <td class="show-td7">
-                                    <span>-</span>
-                                    <input type="number" name="" class="show-input2" value="${this.goods[j].num}">
-                                    <span>+</span>
-                                </td>
-                                <td class="jiage">
-                                    <span>${res[i].price}</span>
-                                </td>
-                                <td class="shanchu">
-                                    <span>删除</span>
-                                </td>
-                                <td class="money">
-                                    <span>去结算</span>
-                                </td>
-                            </tr>`;
-                }
+        this.s1 = getCookie("num");
+        this.s2 = JSON.parse(this.s1)
+        if(this.s2.length<1){
+            this.kong.append("document");
+            this.car.remove();
+        }else{
+            this.car.append("document");
+            this.kong.remove();
+        }
+        for(let i=0;i<this.res2.length;i++){
+            if(this.res2[i].goodsId ===this.key){
+                this.res3 = this.res2[i];
             }
         }
-        // this.tbody.innerHTML = str;
+        let str1 = `
+        <div class="ca">
+        <table>
+            <tbody>
+            <tr>
+                <td class="td1">
+                    <input type="checkbox" class="input1">全选
+                </td>
+                <td class="td2">产品</td>
+                <td class="td3">数量</td>
+                <td class="td4">到店价</td>
+                <td class="td5">删除</td>
+            </tr>
+        </tbody>
+        </table>
+        <table class="show-table2">
+            <tbody>
+            <tr>
+                <td class="mabi">
+                <input type="checkbox" value="">
+                </td>
+                <td class="show-td6">
+                   <img src="${this.res3.img}" alt="">
+                   <div class="show-div">
+                    <p>${this.res3.name}</p><br>
+                    <p class="show-p1">颜色:黑色</p>
+                    <p class="show-p2">尺码:34</p>
+                </div>
+                </td>
+                <td class="show-td7">
+                    <span>-</span>
+                    <input type="text" name="" class="show-input2" value="1">
+                    <span>+</span>
+                </td>
+                <td class="jiage">
+                    <span>￥${this.res3.price}</span>
+                </td>
+                <td class="shanchu">
+                    <span>删除</span>
+                </td>
+                <td class="money">
+                    <span>去结算</span>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+        </div>
+    </div>
+        `;
+        this.car.html(str1)
     }
-    init(){
-        let str =getCookie("numGoods");
-        if(!str){
-            
-        }
-        }
+
 }
 
-    new Car;
+    new Car();
+    function getQueryVariable(key) {
+        // 获取参数
+        var url = window.location.search;
+        // 正则筛选地址栏
+        var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+        // 匹配目标参数
+        var result = url.substr(1).match(reg);
+        //返回参数值
+        return result ? decodeURIComponent(result[2]) : null;
+    }
         
 </script>
 </html>

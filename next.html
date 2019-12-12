@@ -14,8 +14,8 @@
     <div class="t-left">
         
         <span>欢迎光临鞋都网!</span>
-        <a href="">登陆</a>
-        <a href="">免费注册</a>
+        <a id="login">登陆</a>
+        <a id='register'>免费注册</a>
     </div>
     <div class="t-right">
         <a href="">我的信息</a>
@@ -91,7 +91,30 @@
         </ul>
     </div>
 </div>
-
+<!-- 登陆注册 -->
+<div class="popOutBg"></div>
+<div class="popOut">
+    <span title="关闭"> x </span>
+    <table>
+        <caption>欢迎登录本网站</caption>
+        <tr>
+            <td class="one">用户名：</td>
+            <td><input type="text" class="inp user" placeholder="请输入用户名" /></td>
+        </tr>
+        <tr>
+            <td class="one">密码：</td>
+            <td><input type="password" class="inp pass pass3" placeholder="请输入密码" /></td>
+        </tr>
+        <tr>
+            <td class="one">确认密码</td>
+            <td><input type="password" class="inp pass2 pass4" placeholder="确认密码" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="button" class="login" value="登录" /></td>
+            
+        </tr>
+    </table>
+</div>
 
 
 
@@ -234,58 +257,155 @@ $.ajax({
         }
     })
 // //加入购物车
-// class list{
-//     constructor(){
-//         this.url="http://localhost/1911/shoes/data/data3.json";
-//         this.cont = document.querySelector(".goods-show").querySelector("ul");
-//         this.load()
-//         this.addEvent();
-//     }
-//     load(){
-//         var that=this;
-//         ajaxGet(this.url,function(res){
-//             // console.log(res)
-//             that.res=JSON.parse(res)
-//             that.display();
-//         })
-//     }
-//     display(){
-//         var str="";
-//         for(var i=0;i<this.res.length;i++){
-//             str += `
-//                     <li class="good-li1" index="${this.res[i].goodsId}">
-//                         <img src="${this.res[i].img}" class="imgte">
-//                         <span class="good-span">￥${this.res[i].price}</span><span class="good-span2">已售0件</span>
-//                         <p>${this.res[i].name}</p>
-//                         <p href="" class="good-a1">加入收藏</p>
-//                         <a href=""><img src="./imgs/gouwuche.png" alt="" class="imggouwu"></a>
-//                     </li>
-//                     `;
-//         }
-//         this.cont.innerHTML=str;
-//         }
-//         addEvent(){
-//             var that=this;
-//             this.cont.addEventListener("click",function(eve){
-//                 var e=eve || window.event;
-//                 var target = e.target || e.srcElement;
-//                 if(target.className=="good-a1"){
-//                 that.id= target.parentNode.getAttribute("index");
-//                 that.setCookie();
-//                 }
-//             })
-           
-//         }
-//       setCookie(){
-//         this.goods =  getCookie("goodsdecookie") ? JSON.parse(getCookie("goodsdecookie")) : [];
-//             //   console.log(this.goods);
-//             if(this.goods.length<1){
-//                 this.goods.push({
-//                     id:this.id,
-//                     num:1
-//                 })
-//             }
-//         }
-// }
-// new list;
+
+
+
+//登陆注册
+class Login{
+    constructor(){
+        this.user = document.querySelector(".inp");
+        this.pass = document.querySelector(".pass");
+        this.loginEnter = document.querySelector("#login");
+        this.registerEnter = document.querySelector("#register");
+        this.t = 1;
+        this.check = document.querySelector(".pass2");
+        this.login = document.querySelector(".login");
+        this.addEvent();
+        // this.display();
+    }
+    addEvent(){
+        var that = this;
+        this.loginEnter.onclick=function(){
+            that.t = 1;
+            that.check.parentNode.parentNode.style.display = "none";
+
+        }
+        this.registerEnter.onclick=function(){
+            that.t = 2;
+            that.check.parentNode.parentNode.style.display = "table-row";
+            
+        }
+        this.login.onclick = function(){
+            that.u = that.user.value;
+            that.p = that.pass.value;
+            that.usermsg = getCookie("userMsg") ? JSON.parse(getCookie("userMsg")) : [];
+            console.log(that.usermsg)
+            if(that.t == 1){
+                that.loginEve();
+            }else{
+                that.registerEve();
+            }
+        }
+    }
+    loginEve(){
+        this.success = false;
+        console.log(this.u);
+        console.log(this.p)
+        for(let i = 0; i < this.usermsg.length; i++){
+            if(this.usermsg[i].user == this.u && this.usermsg[i].pass == this.p){
+                alert("登陆成功");
+                location.href = "";
+                this.success = true;
+                setCookie("nowUser", this.usermsg[i].user);
+            }
+        }
+        if(!this.success){
+            alert("登陆失败");
+        }
+    }
+    registerEve(){
+        this.isBeing = false;
+        if(this.check.value == this.p){
+            for(let i = 0; i < this.usermsg.length; i++){
+                if(this.u == this.usermsg[i].user){
+                    alert("用户名已存在");
+                    this.isBeing = true;
+                }
+            }
+            if(!this.isBeing){
+                let obj = {
+                    user:this.u,
+                    pass:this.p
+                }
+                this.usermsg.push(obj);
+                setCookie("userMsg", JSON.stringify(this.usermsg),{
+                    expires:100
+                });
+                alert("注册成功");
+            }
+        }else{
+            alert("两次输入不一样");
+        }
+    }
+    
+}
+new Login;
+class Welcome{
+    constructor(){
+        this.titleBox = document.querySelector(".t-left");
+        this.init();
+    }
+    init(){
+        this.nowUser = getCookie("nowUser");
+        if(this.nowUser){
+            this.titleBox.innerHTML = `欢迎你，${this.nowUser}<a class = 'logout'>退出登录</a>`;
+            this.logoutEve();
+        }
+    }
+    logoutEve(){
+        this.logout = document.querySelector(".logout");
+        this.logout.onclick = function(){
+            setCookie("nowUser", "");
+            location.href = "";
+        }
+    }
+}
+new Welcome;
+
+//登陆
+function _sel(param){
+    if(arguments[1] == true){
+        return document.querySelectorAll(param);
+    }else{
+        return document.querySelector(param);
+    }
+    }
+
+    function ani(){
+    _sel(".popOut").className = "popOut ani";
+    }
+
+    $("#login").on("click",function(){
+    _sel(".popOut").style.display = "block";
+    ani();
+    _sel(".popOutBg").style.display = "block";
+    $('.regShow').css({display:'none'});
+    $('.login').val('登陆')
+    });
+    _sel(".popOut > span").onclick = function(){
+    _sel(".popOut").style.display = "none";
+    _sel(".popOutBg").style.display = "none";
+    };
+    _sel(".popOutBg").onclick = function(){
+    _sel(".popOut").style.display = "none";
+    _sel(".popOutBg").style.display = "none";
+    };
+
+    //注册
+    $('#register').on('click',function(){
+    _sel(".popOut").style.display = "block";
+    ani();
+    _sel(".popOutBg").style.display = "block";
+    $('.regShow').css({display:'block'});
+    $('.login').val('注册')
+    })
+    _sel(".popOut > span").onclick = function(){
+    _sel(".popOut").style.display = "none";
+    _sel(".popOutBg").style.display = "none";
+    };
+    _sel(".popOutBg").onclick = function(){
+    _sel(".popOut").style.display = "none";
+    _sel(".popOutBg").style.display = "none";
+    };
+
 </script>
